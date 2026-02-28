@@ -7,6 +7,8 @@
 
 No prompt limits. No broken streams. Full thinking + tool support in OpenCode. Your Cursor subscription, properly integrated.
 
+结论是：没有用。cursor-agent的存在会让相对路径错误，很多写文件的 tool 执行出错。浪费时间
+
 ## Installation
 
 ### Option A — One-line installer
