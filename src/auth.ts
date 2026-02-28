@@ -12,7 +12,7 @@ const log = createLogger("auth");
 // Polling configuration for auth file detection
 const AUTH_POLL_INTERVAL = 2000; // Check every 2 seconds
 const AUTH_POLL_TIMEOUT = 5 * 60 * 1000; // 5 minutes total timeout
-const URL_EXTRACTION_TIMEOUT = 10000; // Wait up to 10 seconds for URL
+const URL_EXTRACTION_TIMEOUT = 60000; // Wait up to 10 seconds for URL
 
 export interface AuthResult {
   type: "success" | "failed";

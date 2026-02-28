@@ -6,19 +6,21 @@
   "main": "dist/plugin-entry.js",
   "module": "src/plugin-entry.ts",
   "scripts": {
-    "build": "bun build ./src/index.ts ./src/plugin-entry.ts ./src/cli/discover.ts ./src/cli/opencode-cursor.ts --outdir ./dist --target node",
-    "dev": "bun build ./src/index.ts ./src/plugin-entry.ts ./src/cli/discover.ts ./src/cli/opencode-cursor.ts --outdir ./dist --target node --watch",
+    "build": "bun build ./standalone.ts ./src/index.ts ./src/plugin-entry.ts ./src/cli/discover.ts ./src/cli/opencode-cursor.ts --outdir ./dist --target node",
+    "dev": "bun build ./standalone.ts ./src/index.ts ./src/plugin-entry.ts ./src/cli/discover.ts ./src/cli/opencode-cursor.ts --outdir ./dist --target node --watch",
     "test": "bun test",
     "test:unit": "bun test tests/unit",
     "test:integration": "bun test tests/integration",
     "test:ci:unit": "bun test tests/tools/defaults.test.ts tests/tools/executor-chain.test.ts tests/tools/sdk-executor.test.ts tests/tools/mcp-executor.test.ts tests/tools/skills.test.ts tests/tools/registry.test.ts tests/unit/cli/model-discovery.test.ts tests/unit/proxy/prompt-builder.test.ts tests/unit/proxy/tool-loop.test.ts tests/unit/provider-boundary.test.ts tests/unit/provider-runtime-interception.test.ts tests/unit/provider-tool-schema-compat.test.ts tests/unit/provider-tool-loop-guard.test.ts tests/unit/plugin.test.ts tests/unit/plugin-tools-hook.test.ts tests/unit/plugin-tool-resolution.test.ts tests/unit/plugin-config.test.ts tests/unit/auth.test.ts tests/unit/streaming/line-buffer.test.ts tests/unit/streaming/parser.test.ts tests/unit/streaming/types.test.ts tests/unit/streaming/delta-tracker.test.ts tests/competitive/edge.test.ts",
     "test:ci:integration": "bun test tests/integration/comprehensive.test.ts tests/integration/tools-router.integration.test.ts tests/integration/stream-router.integration.test.ts tests/integration/opencode-loop.integration.test.ts",
     "discover": "bun run src/cli/discover.ts",
+    "standalone": "bun run standalone.ts",
     "prepublishOnly": "bun run build"
   },
   "bin": {
     "open-cursor": "dist/cli/opencode-cursor.js",
-    "cursor-discover": "dist/cli/discover.js"
+    "cursor-discover": "dist/cli/discover.js",
+    "opencode-cursor-proxy": "dist/standalone.js"
   },
   "exports": {
     ".": {
